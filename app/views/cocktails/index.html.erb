@@ -1,8 +1,30 @@
-<h1>Mini Bar</h1>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1526032042721&di=de0a0d36fc95c9a54e865c723b0ebbcb&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01f66a5632f24932f87512f6d5a08a.gif%403000w_1l_2o_100sh.png');">
+  <div class="banner-content">
+    <h1>Nuit Blanche</h1>
+    <p>CHENGDU</p>
+    <!-- <a class="btn btn-primary btn-lg">Start now</a> -->
+  </div>
+</div>
 
-  <% @cocktails.each do |cocktail| %>
-  <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
-  <% end %>
 
+
+
+
+<div class="container">
+  <div class="row">
+      <% @cocktails.each do |cocktail| %>
+      <div class="col col-xs-12 col-sm-4">
+         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+          <div class="card-category"></div>
+          <div class="card-description">
+            <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+            <!-- <p>Very cool city, the best</p> -->
+          </div>
+        </div>
+      </div>
+
+
+        <% end %>
+  </div>
+</div>
   <%= link_to "Add Cocktail", new_cocktail_path %>
-

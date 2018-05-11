@@ -1,5 +1,10 @@
-<h1>The Dose</h1>
-<% simple_form_for [@cocktail] do |f| -%>
-<%= f.input :description %>
-<%= f.button :submit %>
-<% end -%>
+<h1><%= @cocktail.name %></h1>
+<%= link_to "Add a Dose", new_cocktail_dose_path(@cocktail) %>
+<%= link_to "Back", cocktails_path %>
+
+<%= @cocktail.doses.each do |dose| %>
+  <%= dose.description %>
+  <%= dose.ingredient.name %>
+  <%= link_to "Detele", dose_path(dose), method::delete,data:{confirm:"Sure!!!!!"} %>
+<% end %>
+
